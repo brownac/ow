@@ -1,1 +1,1 @@
-web: gunicorn main:app
+web: APP_SETTINGS=app.cfg gunicorn routes:app

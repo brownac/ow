@@ -11,6 +11,8 @@ requests = "*"
 flask = "*"
 flask-cors = "*"
 gunicorn = "*"
+python-jose = "*"
+bcrypt = "*"
 
 [requires]
 python_version = "2.7"
