@@ -1,0 +1,10 @@
+deploy:
+  provider: elasticbeanstalk
+  access_key_id: AKIAIJELEGDXKE7B4A3Q
+  secret_access_key:
+    secure: FjsRlRiQfdZU5sWqJ4TQf3kcYRyXXgcQnsWK0Voe0prM3EtstoHFb9CMzbwV6lFBJdm07v/cvWx5XwhZSvNhxbQEin6PMQ3Q2Dl7upmwREYJeJpqMBQIxln6IzyQ2Xzx6dQ4D6OkQX4xZaSTb4NzfHQXsdHh7CZq0VtTfVWQin0T8tdzpk3QfMHCycM+5yldFE4qLJB7EjNhQyaxLPhjqBZzLYJKl1cOPqglYoVY/M9AWTdxs2qAArKtbTJ4BEM+oTLySXHfCzpOWfK2azmOXlDwVC38yyXIXqQo2Q4iRPQuHMMyNPW50mD15wlcSMkAHSQwPoqHnuEeq9hruN2wpwXzGNKTLHY0/nyOtoR+y+sUCYh95vycb3ZmlMFMs4aCqf1XC7yf5pjWHdsEk/AzA856LA/Wyf/XwV83IvYjOf1ScPgb9pWovxr3YDtTe2cDVVevwDI9PcK2gNRRcG+hGjbXjHP/IGXhzAqAGsWQcLs40d82mDY11Y13nrjJ7ZTwPlCmlWIvLFVHhMqgXme5DlLu4epbRyzYlao5tsc/o995YIl583GRI4uZFiowajmYO20vk8HCWQgR5/q4/kKN3If8ujctuGhQQt/7VqxOqBVdXyHPzN4BMON37Kl9D/WCMM1YyY+xVcKfEaTDkzYQLTBn4vaXmpJBIgz9qKr4ukA=
+  region: us-east-1
+  app: ow-api
+  env: test
+  on:
+    repo: brownac/ow
