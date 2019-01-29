@@ -27,3 +27,10 @@ def hash_password(password):
 
 def unhash_password(password, hashed):
     return bcrypt.checkpw(password.encode('utf-8'), hashed.encode('utf-8'))
+
+def check_token(token, key):
+    decoded = verify_token(token, key)
+    if 'iss' in decoded:
+        return True
+    else:
+        return False

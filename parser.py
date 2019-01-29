@@ -24,3 +24,7 @@ def get_player_info(entries):
                 attributes["skill_rating"] = skill_rating
                 players.append(attributes)
     return players
+
+def get_individual_info(html):
+    soup = BeautifulSoup(html, 'html.parser')
+    print soup.prettify(html)

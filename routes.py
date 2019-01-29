@@ -2,10 +2,10 @@ from flask import Flask, request
 from flask_cors import CORS, cross_origin
 import json
 
-from parser import get_player_info
-from util import prepare_data
+from parser import get_player_info, get_individual_info
+from util import prepare_data, fetch_player_by_tag
 from db import insert_user, login
-from auth import verify_token
+from auth import check_token, verify_token
 
 app = Flask(__name__)
 cors = CORS(app)
@@ -24,11 +24,9 @@ def player_list():
 def get_player(tag):
     key = app.config['SECRET_KEY']
     token = request.headers['Authorization'].split('Bearer ')[1]
-    decoded = verify_token(token, key)
-    if 'iss' in decoded:
-        return json.dumps({'key': 'value'})
-    else:
-        return "Not authorized!", 403
+    if token is None or check_token(token, key) is False or verify_token(token, key) is False:
+        return "Not authorized", 403
+    return get_individual_info(fetch_player_by_tag(tag))
 
 @app.route("/users/create", methods=['POST'])
 @cross_origin()
